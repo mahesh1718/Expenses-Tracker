@@ -1,0 +1,3 @@
+Python 3.x
+reactions emoji library (used for reactions and emoji feedback , it was coded by me using the help of "emoji" lib)
+tabulate library (used to display data in a table format
