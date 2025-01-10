@@ -8,14 +8,15 @@ Track Expenses: You can enter different types of expenses and record the amount 
 Budget Management: You can set a budget, and the program will calculate the remaining balance after each expense.
 CSV Output: The expenses are saved in a CSV file for easy viewing and analysis.
 Reaction-based Feedback: The program gives you reactions and messages based on the expense type (e.g., happy for school fees, sad for medical).
-
+-----------------------------------------------------------------
 How to use:
-Run the program.
-Enter your budget for the month.
-Start recording your expenses by typing the type of expense and the amount spent.
-The program will calculate the remaining budget and save the details in a CSV file.
-You can view the saved expenses by typing "done" when prompted.
-Requirements:
+1.Run the program.
+2.Enter your budget for the month.
+3.Start recording your expenses by typing the type of expense and the amount spent.
+4.The program will calculate the remaining budget and save the details in a CSV file.
+4.You can view the saved expenses by typing "done" when prompted.
+----------------------------------------------------------------
+->Requirements:
 Python 3.x
 reactions library (used for reactions and emoji feedback which was coded by me for my use)
 tabulate library (used to display data in a table format)
