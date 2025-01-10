@@ -1,8 +1,8 @@
 Hi, I'm Mahesh, pursuing my bachelor's in Computer Science at Parul University. I have come up with a Python project called "Expensive Tracker," which tracks a person's expenses and provides a tabular format of the details.
-
+------------------------------------------------------
 Expensive Tracker
 This is a Python project called "Expensive Tracker." The purpose of this program is to help you track and manage your expenses. It allows you to record different types of expenses, such as medical, rental, and school fees, and keep track of your remaining budget.
-
+------------------------------------------------------------
 Features
 Track Expenses: You can enter different types of expenses and record the amount spent.
 Budget Management: You can set a budget, and the program will calculate the remaining balance after each expense.
@@ -20,4 +20,4 @@ How to use:
 Python 3.x
 reactions library (used for reactions and emoji feedback which was coded by me for my use)
 tabulate library (used to display data in a table format)
-
+-------------------------------------------------------------
