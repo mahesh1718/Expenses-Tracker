@@ -10,7 +10,7 @@ def main():
 
 def expensetype():
     while True:
-        s = input("Type of expense (e.g., Medical, Rental, School or College fee, anything else): ").lower()
+        s = input("Type of expense (e.g., Medical, Rental, School or College fee, other): ").lower()
         if not re.match(r"^[a-zA-Z\s]+$", s):
                 print("Expense type should not contain numbers or symbols. Please try again.")
                 continue
