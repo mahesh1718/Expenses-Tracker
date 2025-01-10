@@ -16,11 +16,22 @@ def expensetype():
                 continue
         return s
 
-
 def expenditure(Type):
     types = ["medical", "rental", "school fee", "college fee", "other"]
     if Type in types:
-        s = int(input("Spent amount: "))
+        while True:
+            try:
+                s = int(input("Spent amount: "))
+                if s < 0:
+                    print("Amount cannot be negative. Please enter a valid amount.")
+                    continue
+                break  # Exit the loop if a valid, non-negative number is entered
+
+                # Add any other conditions for specific types if needed
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+                continue
+
         if Type == "medical":
             print(f"Is everything ok? {reactions.sad()}")
             confirmation = input("Yes / No: ").lower()
@@ -33,6 +44,7 @@ def expenditure(Type):
         elif Type in ["school fee", "college fee"]:
             print(f"Study and keep yourself motivated in every moment {reactions.happy()}")
         return s
+
 
 
 def get_budget():
