@@ -58,17 +58,23 @@ def budget():
 
     if saved_budget is not None:
         # Ask if the user wants to use the saved budget or set a new one
-        use_saved = input(f"Your left over budget is {saved_budget}. Do you want to use it? (yes/no): ").lower()
+        use_saved = input(f"Your leftover budget is {saved_budget}. Do you want to use it? (yes/no): ").lower()
         if use_saved == 'yes':
             return saved_budget
         else:
             # If the user doesn't want to use the saved budget, ask for a new one
             new_budget = int(input("Enter your budget for this month: "))
+            if new_budget < 0:
+                print("Budget cannot be negative. Please enter a valid budget.")
+                return budget()  # Prompt for budget again
             set_budget(new_budget)  # Save the new budget to the file
             return new_budget
     else:
         # If no saved budget exists, prompt the user to set a new budget
         new_budget = int(input("Enter your budget for this month: "))
+        if new_budget < 0:
+            print("Budget cannot be negative. Please enter a valid budget.")
+            return budget()  # Prompt for budget again
         set_budget(new_budget)  # Save the new budget to the file
         return new_budget
 
