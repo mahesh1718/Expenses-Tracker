@@ -4,17 +4,23 @@ import reactions
 import tabulate
 from datetime import date
 
+
 def main():
     file()
 
 
 def expensetype():
     while True:
-        s = input("Type of expense (e.g., Medical, Rental, School or College fee, other): ").lower()
+        s = input(
+            "Type of expense (e.g., Medical, Rental, School or College fee, other): "
+        ).lower()
         if not re.match(r"^[a-zA-Z\s]+$", s):
-                print("Expense type should not contain numbers or symbols. Please try again.")
-                continue
+            print(
+                "Expense type should not contain numbers or symbols. Please try again."
+            )
+            continue
         return s
+
 
 def expenditure(Type):
     types = ["medical", "rental", "school fee", "college fee", "other"]
@@ -42,9 +48,10 @@ def expenditure(Type):
         elif Type == "rental":
             print(f"Done for this month {reactions.congo()}")
         elif Type in ["school fee", "college fee"]:
-            print(f"Study and keep yourself motivated in every moment {reactions.happy()}")
+            print(
+                f"Study and keep yourself motivated in every moment {reactions.happy()}"
+            )
         return s
-
 
 
 def get_budget():
@@ -70,8 +77,10 @@ def budget():
 
     if saved_budget is not None:
         # Ask if the user wants to use the saved budget or set a new one
-        use_saved = input(f"Your leftover budget is {saved_budget}. Do you want to use it? (yes/no): ").lower()
-        if use_saved == 'yes':
+        use_saved = input(
+            f"Your leftover budget is {saved_budget}. Do you want to use it? (yes/no): "
+        ).lower()
+        if use_saved == "yes":
             return saved_budget
         else:
             # If the user doesn't want to use the saved budget, ask for a new one
@@ -112,7 +121,9 @@ def spenton():
 
 def file():
     while True:
-        k = input("Type 'done' to exit the entering format then it will display your list: ").lower()
+        k = input(
+            "Type 'done' to exit the entering format then it will display your list: "
+        ).lower()
         if k == "done":
             return formating()
 
@@ -128,20 +139,29 @@ def file():
         Today = Date()
 
         with open("Expenses.csv", "a", newline="") as file:
-            fieldnames = ["Date(YYYY-MM-DD)", "Type of expense", "Spent on", "Paid", "Budget", "Total remaining in this month"]
+            fieldnames = [
+                "Date(YYYY-MM-DD)",
+                "Type of expense",
+                "Spent on",
+                "Paid",
+                "Budget",
+                "Total remaining in this month",
+            ]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             file.seek(0, 2)
             if file.tell() == 0:
                 writer.writeheader()
 
-            writer.writerow({
-                "Date(YYYY-MM-DD)": Today,
-                "Type of expense": Type,
-                "Spent on": Spent_on,
-                "Paid": Paid,
-                "Budget": Budget,
-                "Total remaining in this month": Remaining
-            })
+            writer.writerow(
+                {
+                    "Date(YYYY-MM-DD)": Today,
+                    "Type of expense": Type,
+                    "Spent on": Spent_on,
+                    "Paid": Paid,
+                    "Budget": Budget,
+                    "Total remaining in this month": Remaining,
+                }
+            )
         print("Expense recorded successfully!")
         print(f"you saved {Remaining} {reactions.fire()}")
 
